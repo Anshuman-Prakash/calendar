@@ -92,6 +92,14 @@ export default function WallCalendar() {
       <p className="text-sm font-semibold text-gray-700 hover:text-blue-500 transition">
         Anshuman Prakash
       </p>
+      <a
+        href="https://github.com/Anshuman-Prakash/calendar"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xs text-blue-500 hover:underline block mt-1"
+      >
+        🔗 GitHub Profile
+      </a>
     </footer>
 
   </div>

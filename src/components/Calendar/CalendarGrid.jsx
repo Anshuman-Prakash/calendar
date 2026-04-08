@@ -2,10 +2,13 @@ import { daysInMonth, startDow } from "../../utils/dateUtils";
 import DateCell from "./DateCell";
 
 export default function CalendarGrid({
-  year, month, theme,
-  rangeStart, rangeEnd,
-  hovered, setHovered,
-  handleSelect
+  year,
+  month,
+  rangeStart,
+  rangeEnd,
+  hovered,
+  setHovered,
+  handleSelect,
 }) {
   const days = daysInMonth(year, month);
   const offset = startDow(year, month);
@@ -17,20 +20,45 @@ export default function CalendarGrid({
 
   return (
     <div className="grid grid-cols-7 gap-2 text-center">
-      {cells.map((day, i) => (
-        <DateCell
-          key={i}
-          day={day}
-          month={month}
-          year={year}
-          theme={theme}
-          rangeStart={rangeStart}
-          rangeEnd={rangeEnd}
-          hoveredDate={hovered}
-          onSelect={handleSelect}
-          onHover={setHovered}
-        />
-      ))}
+      {cells.map((day, i) => {
+        if (!day) return <div key={i} />;
+
+        const date = new Date(year, month, day);
+        date.setHours(0, 0, 0, 0);
+
+        const isStart =
+          rangeStart && date.getTime() === rangeStart.getTime();
+
+        const isEnd =
+          rangeEnd && date.getTime() === rangeEnd.getTime();
+
+        const isInRange =
+          rangeStart &&
+          rangeEnd &&
+          date > rangeStart &&
+          date < rangeEnd;
+
+        const isPreviewRange =
+          rangeStart &&
+          !rangeEnd &&
+          hovered &&
+          date > rangeStart &&
+          date <= hovered;
+
+        return (
+          <DateCell
+            key={i}
+            day={day}
+            isStart={isStart}
+            isEnd={isEnd}
+            isInRange={isInRange}
+            isPreviewRange={isPreviewRange}
+            onClick={() => handleSelect(date)}
+            onHover={() => setHovered(date)}
+            onLeave={() => setHovered(null)}
+          />
+        );
+      })}
     </div>
   );
 }
