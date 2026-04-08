@@ -7,6 +7,7 @@ export default function HeroSection({ curMonth, curYear, navigate }) {
       {/* Image */}
       <img
         src={heroImg}
+        alt="calendar hero"
         className="absolute w-full h-full object-cover"
       />
 
