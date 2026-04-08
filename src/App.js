@@ -1,7 +1,14 @@
 import WallCalendar from "./components/Calendar/WallCalendar";
 
+import { Toaster } from "react-hot-toast";
+
 function App() {
-  return <WallCalendar />;
+  return (
+    <>
+      <Toaster />
+      <WallCalendar />
+    </>
+  );
 }
 
 export default App;

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ymd } from "../../utils/dateUtils";
+import toast from "react-hot-toast";
 
 export default function NotesPanel({
   theme, rangeStart, rangeEnd, notes, setNotes
@@ -16,6 +17,7 @@ export default function NotesPanel({
     const updated = { ...notes, [key]: val };
     setNotes(updated);
     localStorage.setItem("wcal_notes", JSON.stringify(updated));
+    toast.success("Note Saved ✅");
   };
 
   return (
