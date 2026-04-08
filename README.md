@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+# Interactive Wall Calendar (React + Tailwind)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Link : "https://calendar-blond-tau.vercel.app/"
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+A modern, responsive **Wall Calendar Web Application** inspired by physical hanging calendars.
+It combines **clean UI design, interactive date selection, and note-taking features** to create a polished frontend experience.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Calendar Functionality
 
-### `npm test`
+* Month navigation (Prev / Next)
+* Displays full monthly grid (Mon–Sun)
+* Highlights current date
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Date Range Selection
 
-### `npm run build`
+* Select **start and end date**
+  
+### Notes System
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Add notes for selected dates
+* Data persists using **localStorage**
+* Auto-loads notes on refresh
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### UI / UX
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Hero section with background image
+* Smooth hover and selection animations
+* Clean white theme (professional look)
+* Responsive layout (desktop + mobile)
 
-### `npm run eject`
+### Animations
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Hover scale effects
+* Smooth transitions on date selection
+* Interactive UI feedback
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Tech Stack
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* React.js
+* Tailwind CSS
+* JavaScript (ES6+)
+* LocalStorage (for persistence)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+ ├── components/
+ │   ├── Calendar/
+ │   │   ├── WallCalendar.jsx
+ │   │   ├── CalendarGrid.jsx
+ │   │   ├── DateCell.jsx
+ │   │   ├── HeroSection.jsx
+ │   │
+ │   ├── Notes/
+ │   │   └── NotesPanel.jsx
+ │
+ ├── utils/
+ │   └── dateUtils.js
+ │
+ ├── App.jsx
+ └── index.js
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Getting Started
 
-### Analyzing the Bundle Size
+### Clone the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+git clone https://github.com/your-username/calendar-app.git
+cd calendar-app
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Install dependencies
 
-### Advanced Configuration
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+### Run the app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm start
+```
 
-### `npm run build` fails to minify
+Open: http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## How It Works
+
+* **Date Selection Logic**
+
+  * First click → Start date
+  * Second click → End date
+  * Range auto-highlighted
+
+* **Notes Storage**
+
+  * Stored in browser using:
+
+    ```
+    localStorage → "wcal_notes"
+    ```
+  * Automatically restored on reload
+
+---
+
+## UI Highlights
+
+* Wall calendar-inspired layout
+* Hero image section
+* Smooth and intuitive interactions
+* Clean and minimal design
+
+---
+
+## Future Improvements
+
+* Dark / Light theme toggle
+* Framer Motion animations
+* Notes per individual date
+* Drag-to-select date range
+* Holiday indicators
+
+---
+
+## Author
+
+**Anshuman Prakash**
+
+* Software Engineer
+* React | MERN Stack Developer
+
+---
+
+## Show Your Support
+
+If you like this project:
+
+* Star the repo
+* Fork it
+* Share it
+
+---
+
+## License
+
+This project is open-source and available under the **MIT License**.
