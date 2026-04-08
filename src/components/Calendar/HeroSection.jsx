@@ -1,10 +1,12 @@
+import heroImg from "./Nature-Wallpaper-01145.jpg";
+
 export default function HeroSection({ curMonth, curYear, navigate }) {
   return (
     <div className="relative rounded-2xl overflow-hidden h-[420px]">
 
       {/* Image */}
       <img
-        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+        src={heroImg}
         className="absolute w-full h-full object-cover"
       />
 
