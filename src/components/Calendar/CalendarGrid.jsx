@@ -26,6 +26,12 @@ export default function CalendarGrid({
         const date = new Date(year, month, day);
         date.setHours(0, 0, 0, 0);
 
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const isToday =
+          date.getTime() === today.getTime();
+
         const isStart =
           rangeStart && date.getTime() === rangeStart.getTime();
 
@@ -53,6 +59,7 @@ export default function CalendarGrid({
             isEnd={isEnd}
             isInRange={isInRange}
             isPreviewRange={isPreviewRange}
+            isToday={isToday}   // ✅ ADD THIS LINE
             onClick={() => handleSelect(date)}
             onHover={() => setHovered(date)}
             onLeave={() => setHovered(null)}

@@ -4,6 +4,7 @@ export default function DateCell({
   isEnd,
   isInRange,
   isPreviewRange,
+  isToday,
   onClick,
   onHover,
   onLeave,
@@ -33,7 +34,11 @@ export default function DateCell({
           ? "bg-blue-100"
           : ""}
 
-        ${!isStart && !isEnd && !isInRange && !isPreviewRange
+        ${isToday && !isStart && !isEnd
+          ? "border-2 border-blue-500 font-bold text-blue-600"
+          : ""}
+
+        ${!isStart && !isEnd && !isInRange && !isPreviewRange && !isToday
           ? "text-gray-800 hover:bg-gray-200"
           : ""}
       `}
