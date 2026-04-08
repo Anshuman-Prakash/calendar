@@ -24,7 +24,7 @@ export default function NotesPanel({
         value={val}
         onChange={(e) => setVal(e.target.value)}
         placeholder="Save your dates..."
-        className="w-full p-3 rounded-lg bg-slate-100 text-white border border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full p-3 rounded-lg bg-slate-100 text-black border border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       <button
         onClick={save}
